@@ -136,43 +136,6 @@ function updateMap(searchQuery) {
         }
     });
 }
-// List of companies from the image provided
-var companies = [
-    "AMREF", "Africa Resoure Centre", "Afya Ugavi", "Afya Uwazi", "Boresha Jamii USAID",
-    "CHAI", "CIHEB", "CIPS", "CMMB", "FIND", "Fahari ya Jamii", "Fred Hollows",
-    "HJFMRI", "Hellen Keller International", "IPAS", "IQVIA", "IRDO", "JHPIEGO", "JTP",
-    "Jacaranda BMGF", "Jamii Tekelezi CHAK", "LVCT", "Lwala Community", "MSF", "MSH",
-    "Nuru ya Mtoto", "Nutrition International", "PATH", "PS Kenya", "Think Well",
-    "UNFPA", "UNICEF", "USAID Ampath uzima", "USAID DUMISHA AFYA", "USAID Nawiri",
-    "USAID Tujenge Jamii UTJ program", "USP PQM", "Vision Impact", "WHO", "WRP",
-    "Waltered program", "Xetova Microvision", "inSupply"
-];
-// Populate the dropdown menu with companies
-function populateDropdown() {
-    var select = document.getElementById('companies-select');
-    companies.forEach(function(companies) {
-        var option = document.createElement('option');
-        option.value = companies.toLowerCase(); // Use lowercase to match the search logic
-        option.text = companies;
-        select.add(option);
-    });
-}
-
-// Call the populateDropdown function to populate the dropdown
-populateDropdown();
-
-// Add event listener for the dropdown menu
-document.getElementById('company-select').addEventListener('change', function () {
-    var selectedCompany = this.value;
-    if (selectedCompany) {
-        updateMap(selectedCompany);
-    } else {
-        labelsLayer.clearLayers(); // Clear labels when no company is selected
-        geojsonLayer.eachLayer(function (layer) {
-            layer.setStyle(style(layer.feature)); // Reset to original style
-        });
-    }
-});
 
 // Add event listener for the search box
 document.getElementById('search-box').addEventListener('input', function (e) {
