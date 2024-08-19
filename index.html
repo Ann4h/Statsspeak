@@ -50,6 +50,16 @@
             display: block;
             margin-bottom: 10px;
         }
+        /* Dropdown styling */
+        #company-select {
+            padding: 10px;
+            width: 400px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: block;
+            margin-bottom: 10px;
+        }
         /* Legend styling */
         .legend {
             background-color: white;
@@ -81,6 +91,9 @@
             <div id="main-title">HPT PARTNERS</div>
             <div id="map-title">Thematic Map of HPT Supply Chain Partners</div>
             <input type="text" id="search-box" placeholder="Search for a company" />
+            <select id="company-select">
+                <option value="" disabled selected>Select a company</option>
+            </select>
         </div>
         <div id="map"></div>
         <div id="description">
