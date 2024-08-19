@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thematic Map - HPT Supply Chain Partners</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Main container for the entire map and associated elements */
+        #main-container {
+            border: 5px solid #007bff; /* Solid blue border visible on all sides */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px auto; /* Center the container */
+            background-color: white;
+            max-width: 1200px; /* Limit the width for better viewing on larger screens */
+        }
+        /* Full-screen map */
+        #map {
+            height: 70vh; /* Reduced height to accommodate the titles */
+            width: 100%;
+        }
+        /* Container for title and search box */
+        #header-container {
+            background-color: #e6f7ff; /* Light blue shade */
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        /* Title styling */
+        #main-title {
+            text-align: left;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        #map-title {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        /* Search box styling */
+        #search-box {
+            padding: 10px;
+            width: 400px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: block;
+            margin-bottom: 10px;
+        }
+        /* Legend styling */
+        .legend {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            line-height: 20px;
+            color: #555;
+            width: 180px;
+        }
+        .legend h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+        /* Description box styling */
+        #description {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e6f7ff; /* Light blue shade for description */
+            border-radius: 5px;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="header-container">
+            <div id="main-title">HPT PARTNERS</div>
+            <div id="map-title">Thematic Map of HPT Supply Chain Partners</div>
+            <input type="text" id="search-box" placeholder="Search for a company" />
+        </div>
+        <div id="map"></div>
+        <div id="description">
+            <p>An interactive webmap showing the distribution of partners supporting the HPT supply chain at National and County Level.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
